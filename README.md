@@ -20,6 +20,7 @@ Also, please install the nessesary requirements by running ```pip install -r req
 The code is based on the following repositories:
 * [HyperbolicRecommender](https://github.com/evfro/HyperbolicRecommenders)
 * [Sequential VAE for Collaborative Filtering](https://github.com/noveens/svae_cf) 
+
 The implementation of hyperbolic layers is taken from:
 * [geoopt](https://github.com/geoopt)
 * [hyptorch](https://github.com/leymir/hyperbolic-image-embeddings)
