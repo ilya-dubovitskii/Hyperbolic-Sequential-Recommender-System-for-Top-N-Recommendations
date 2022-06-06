@@ -91,11 +91,11 @@ class ProjectedSphericalVmfProcedure(SamplingProcedure[RadiusProjectedVonMisesFi
 class WrappedNormalProcedure(SamplingProcedure[WrappedNormal, WrappedNormal]):
 
     def reparametrize(self, z_mean: Tensor, std: Tensor) -> Tuple[WrappedNormal, WrappedNormal]:
-        q_z = WrappedNormal(z_mean, std, manifold=self._manifold)
+        q_z = WrappedNormal(z_mean, std, manifold=self._manifold, validate_args=False)
 
         mu_0 = self._manifold.mu_0(z_mean.shape, device=z_mean.device)
         std_0 = torch.ones_like(std, device=z_mean.device)
-        p_z = WrappedNormal(mu_0, std_0, manifold=self._manifold)
+        p_z = WrappedNormal(mu_0, std_0, manifold=self._manifold, validate_args=False)
         return q_z, p_z
 
     def kl_loss(self, q_z: WrappedNormal, p_z: WrappedNormal, z: Tensor, data: Tuple[Tensor, ...]) -> Tensor:
