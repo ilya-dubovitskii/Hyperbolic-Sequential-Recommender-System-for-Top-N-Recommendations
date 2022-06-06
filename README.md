@@ -1,36 +1,25 @@
-# Hyperbolic (ordinary and variational) autoencoders for recommender systems
-Accompanying code for the paper [Performance of Hyperbolic Geometry Models on Top-N Recommendation Tasks](https://arxiv.org/abs/2008.06716), accepted at ACM RecSys 2020.
+# Hyperbolic Sequential Recommender System for Top-N Recommendations
+Accompanying code for the Data Science MSc thesis at Skoltech.
+This code contains notebooks with described experiments and implementation of Sequential VAE matching with [HyperbolicRecommender](https://github.com/evfro/HyperbolicRecommenders) pipeline for convinient experiment runs.
 
 ## Results
 <p align="middle">
-  <img src="assets/netflix.png" />
-  <img src="assets/ml20m.png"/> 
-  <img src="assets/pinterest.png" />   
-  <img src="assets/ML1M_.png" /> 
+  <img src="assets/next_item.png" />
+  <img src="assets/next_k.png"/> 
 </p>
 
 
 ## Data
-To reproduce our code, please put the corresponding data files in the following folder structure:
+To reproduce the code, please download [Movielens-1M dataset](https://grouplens.org/datasets/movielens/1m/) and preprocess it using ```src/ml_seq_preproc/py``` 
 
-data
-  * troublinganalysis
-      * mvae
-          * netflix
-          * ml20m
-      * neumf
-          * ml1m
-          * pinterest
-  * recvae
-      * ml20m
 
-Also, please install geoopt package [geoopt](https://github.com/geoopt) for Riemannian optimization and [hyptorch](https://github.com/leymir/hyperbolic-image-embeddings) for computations in hyperbolic spaces.
+Also, please install the nessesary requirements by running ```pip install -r requirements.txt``` 
 
-## Wandb
-In our experiments, we have used [wandb](http://wandb.com) framework for result tracking. Our test scripts are based on wandb configs.
 
 ## Acknowledgments
-In our code we have used the following repositories:
-* [mvae](https://github.com/oskopek/mvae)
+The code is based on the following repositories:
+* [HyperbolicRecommender](https://github.com/evfro/HyperbolicRecommenders)
+* [Sequential VAE for Collaborative Filtering](https://github.com/noveens/svae_cf) 
+The implementation of hyperbolic layers is taken from:
 * [geoopt](https://github.com/geoopt)
 * [hyptorch](https://github.com/leymir/hyperbolic-image-embeddings)
